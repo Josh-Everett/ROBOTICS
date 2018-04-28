@@ -27,6 +27,12 @@ bool REACTIVE_MODE = true;
 //		 MODULES		//
 //						//
 */						//
+void bear_left(){
+
+}
+void bear_right(){
+
+}
 
 
 
