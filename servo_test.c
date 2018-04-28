@@ -5,6 +5,15 @@ void turn_left();
 void turn_right();
 void check_dist();
 
+
+//servo 1 is dump truck
+// dump base at 1235
+// dump at 700
+
+// servo 3 for plow
+//plow level with ground at 273
+
+
 //drive straght for whenever the road is clear
 void drive_forward(){
    motor(0, 50);
@@ -47,15 +56,15 @@ void turn_slightRight(){
 }
 
 void DUMP(){
-    set_servo_position(3,2040);
+    set_servo_position(0,700);
     msleep(500);
-    set_servo_position(3,500);
+    set_servo_position(0,1235);
     return;
 }
 void PLOW(){
-    set_servo_position(4, 2040);
+    set_servo_position(3, 2040);
     msleep(500);
-    set_servo_position(4,500);
+    set_servo_position(3,270);
     return;
 
 }
@@ -64,6 +73,8 @@ int main()
 {    
     while(1) {
         enable_servos();
+        set_servo_position(0,1235);
+        set_servo_position(3,270);
         PLOW();
         DUMP();
         disable_servos();
