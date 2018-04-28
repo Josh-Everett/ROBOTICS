@@ -1,23 +1,82 @@
 #include <kipr/botball.h>
+
+// GLOBALS
+
+// objects are red 
+// dumpsite is blue
+// OBJECT_CH = 0 , DUMPSITE_CH = 1
+int ch = 0, 
+
+// MOTORS
+int leftmtr = 1, rghtmtr = 0; 
+
+// VELOCITIES
+int high = 75, med = 50,  low = 25; // set wheel powers for arc radius
+int reverse_high = 75, reverse_med = 50, reverse_low = 25;
+
+// if we are not in reactive mode we are acting deliberitely
+// REACTIVE_MODE means we are using wander modules with bump sensor to 
+// avoid objects.
+// Begin execution in reactive mode
+bool REACTIVE_MODE = true;
+
+
+/*						//
+//						//
+//		 GLOBAL 		//						
+//		 MODULES		//
+//						//
+*/						//
+
+
+
+/*						//
+//						//
+//		REACTIVE 		//						
+//		 MODULES		//
+//						//
+*/						//
+
+void wander(){
+
+}
+void bump_reactive(){
+
+}
+
+/*						//
+//						//
+//		DELIBERATIVE    //						
+//		 MODULES		//
+//						//
+*/						//
+
+void bump_deliberative(){
+
+}
+
+void lift_plow(){
+
+}
+void orient_dump(){
+
+}
+void lift_dump(){
+
+}
+
+
+/*						//
+//						//
+//		   MAIN 	 	//						
+//		  PROGRAM	    //
+//						//
+*/						//
+
 int main(){
-	// objects are read; dumpsite is blue
-	// OBJECT_CH = 0 , DUMPSITE_CH = 1
-	int ch = 0, 
-
-	// MOTORS
-	int leftmtr = 1, rghtmtr = 0; 
 	
-	// VELOCITIES
-	int high = 75, med = 50,  low = 25; // set wheel powers for arc radius
-	int reverse_high = 75, reverse_med = 50, reverse_low = 25;
 
-	// if we are not in reactive mode we are acting deliberitely
-	// REACTIVE_MODE means we are using wander modules with bump sensor to 
-	// avoid objects
-	bool REACTIVE_MODE = true;
-
-	// 
-
+	
 	camera_open();
 	while(1) { 
         if (!camera_update()){
