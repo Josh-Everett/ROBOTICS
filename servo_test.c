@@ -6,12 +6,12 @@ void turn_right();
 void check_dist();
 
 
-//servo 1 is dump truck
+// servo 1 is dump truck
 // dump base at 1235
 // dump at 700
 
 // servo 3 for plow
-//plow level with ground at 273
+// plow level with ground at 273
 
 
 //drive straght for whenever the road is clear
@@ -72,9 +72,9 @@ void PLOW(){
 int main()
 {    
     while(1) {
-        enable_servos();
         set_servo_position(0,1235);
         set_servo_position(3,270);
+        enable_servos();
         PLOW();
         DUMP();
         disable_servos();

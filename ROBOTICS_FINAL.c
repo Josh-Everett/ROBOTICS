@@ -12,7 +12,7 @@ int leftmtr = 1, rghtmtr = 0;
 
 // VELOCITIES
 int high = 75, med = 50,  low = 25; // set wheel powers for arc radius
-int reverse_high = 75, reverse_med = 50, reverse_low = 25;
+int reverse_high = -75, reverse_med = -50, reverse_low = -25;
 
 // if we are not in reactive mode we are acting deliberitely
 // REACTIVE_MODE means we are using wander modules with bump sensor to 
@@ -43,7 +43,7 @@ void bear_right(){
 //						//
 */						//
 
-void wander(){
+void reactive_wander(){
 
 }
 void bump_reactive(){
@@ -56,10 +56,25 @@ void bump_reactive(){
 //		 MODULES		//
 //						//
 */						//
-
-void bump_deliberative(){
+bool deliberative_seek(){
+	// similar to reactive wander
+	// difference is looking for BLUE dumpsite
+	// return false when site has been located
 
 }
+
+// if we bump while seeking we need to navigate around an obstacle 
+void bump_deliberative_seek(){
+
+}
+
+//reorient the robots position to dump
+void bump_deliberative_site(){
+	orient_dump();
+	dump();
+	
+}
+
 
 void lift_plow(){
 
@@ -67,7 +82,9 @@ void lift_plow(){
 void orient_dump(){
 
 }
-void lift_dump(){
+void dump(){
+	// after dumping orient to wander
+	REACTIVE_MODE = true;
 
 }
 
@@ -80,8 +97,6 @@ void lift_dump(){
 */						//
 
 int main(){
-	
-
 	
 	camera_open();
 	while(1) { 
